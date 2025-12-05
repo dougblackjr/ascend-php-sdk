@@ -5,7 +5,7 @@ Get up and running with the Ascend PHP SDK in minutes.
 ## Installation
 
 ```bash
-composer require your-vendor/ascend-php-sdk
+composer require triplenerdscore/ascend-php-sdk
 ```
 
 ## Basic Setup
@@ -46,7 +46,7 @@ foreach ($programs['data'] as $program) {
 ### 1. Install the Package
 
 ```bash
-composer require your-vendor/ascend-php-sdk
+composer require triplenerdscore/ascend-php-sdk
 ```
 
 ### 2. Publish Config

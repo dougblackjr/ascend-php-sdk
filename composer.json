@@ -1,5 +1,5 @@
 {
-    "name": "your-vendor/ascend-php-sdk",
+    "name": "triplenerdscore/ascend-php-sdk",
     "description": "Official PHP SDK for the Ascend insurance payments platform API",
     "type": "library",
     "keywords": ["ascend", "insurance", "payments", "api", "sdk", "laravel"],

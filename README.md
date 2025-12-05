@@ -24,7 +24,7 @@ Official PHP SDK for the [Ascend](https://useascend.com) insurance payments plat
 Install via Composer:
 
 ```bash
-composer require your-vendor/ascend-php-sdk
+composer require triplenerdscore/ascend-php-sdk
 ```
 
 ### Laravel Setup
@@ -60,11 +60,11 @@ $ascend = new AscendClient(
 $programs = $ascend->programs()->listPrograms();
 
 // Get a specific program
-$program = $ascend->programs()->get('prog_123');
+$program = $ascend->programs()->get('UUID');
 
 // Create an invoice
 $invoice = $ascend->invoices()->createInvoice([
-    'program_id' => 'prog_123',
+    'program_id' => 'UUID',
     'amount' => 100000,
     'due_date' => '2025-01-31',
 ]);
@@ -146,35 +146,35 @@ The SDK provides access to the following resources:
 // List all programs
 $programs = $ascend->programs()->listPrograms([
     'page' => 1,
-    'insured_id' => 'ins_123',
+    'insured_id' => 'UUID',
 ]);
 
 // Get a program
-$program = $ascend->programs()->get('prog_123');
+$program = $ascend->programs()->get('UUID');
 
 // Create a program
 $program = $ascend->programs()->createProgram([
-    'insured_id' => 'ins_123',
-    'carrier_id' => 'car_123',
+    'insured_id' => 'UUID',
+    'carrier_id' => 'UUID',
     // ... additional fields
 ]);
 
 // Update a program
-$program = $ascend->programs()->updateProgram('prog_123', [
+$program = $ascend->programs()->updateProgram('UUID', [
     'status' => 'active',
 ]);
 
 // Archive a program
-$ascend->programs()->delete('prog_123');
+$ascend->programs()->delete('UUID');
 
 // Unarchive a program
-$ascend->programs()->unarchiveProgram('prog_123');
+$ascend->programs()->unarchiveProgram('UUID');
 
 // Send notification
-$ascend->programs()->notifyInsured('prog_123');
+$ascend->programs()->notifyInsured('UUID');
 
 // Create loan payoff estimate
-$estimate = $ascend->programs()->createLoanPayoffEstimate('prog_123');
+$estimate = $ascend->programs()->createLoanPayoffEstimate('UUID');
 ```
 
 ### Invoices
@@ -184,22 +184,22 @@ $estimate = $ascend->programs()->createLoanPayoffEstimate('prog_123');
 $invoices = $ascend->invoices()->listInvoices(['page' => 1]);
 
 // Get an invoice
-$invoice = $ascend->invoices()->get('inv_123');
+$invoice = $ascend->invoices()->get('UUID');
 
 // Create an invoice
 $invoice = $ascend->invoices()->createInvoice([
-    'program_id' => 'prog_123',
+    'program_id' => 'UUID',
     'amount' => 50000,
     'due_date' => '2025-02-15',
 ]);
 
 // Update an invoice
-$invoice = $ascend->invoices()->updateInvoice('inv_123', [
+$invoice = $ascend->invoices()->updateInvoice('UUID', [
     'amount' => 55000,
 ]);
 
 // Void an invoice
-$ascend->invoices()->voidInvoice('inv_123');
+$ascend->invoices()->voidInvoice('UUID');
 ```
 
 ### Contacts
@@ -209,7 +209,7 @@ $ascend->invoices()->voidInvoice('inv_123');
 $contacts = $ascend->contacts()->list(['page' => 1]);
 
 // Get a contact
-$contact = $ascend->contacts()->get('con_123');
+$contact = $ascend->contacts()->get('UUID');
 
 // Create a contact
 $contact = $ascend->contacts()->create([
@@ -220,7 +220,7 @@ $contact = $ascend->contacts()->create([
 ]);
 
 // Update a contact
-$contact = $ascend->contacts()->update('con_123', [
+$contact = $ascend->contacts()->update('UUID', [
     'phone' => '+0987654321',
 ]);
 ```
@@ -230,27 +230,27 @@ $contact = $ascend->contacts()->update('con_123', [
 ```php
 // Create an installment plan
 $plan = $ascend->installmentPlans()->create([
-    'program_id' => 'prog_123',
+    'program_id' => 'UUID',
     'installments' => 12,
     'down_payment' => 10000,
 ]);
 
 // Get an installment plan
-$plan = $ascend->installmentPlans()->get('plan_123');
+$plan = $ascend->installmentPlans()->get('UUID');
 
 // Update an installment plan
-$plan = $ascend->installmentPlans()->updateInstallmentPlan('plan_123', [
+$plan = $ascend->installmentPlans()->updateInstallmentPlan('UUID', [
     'status' => 'active',
 ]);
 
 // Cancel an installment plan
-$ascend->installmentPlans()->cancelInstallmentPlan('plan_123');
+$ascend->installmentPlans()->cancelInstallmentPlan('UUID');
 
 // Archive an installment plan
-$ascend->installmentPlans()->archiveInstallmentPlan('plan_123');
+$ascend->installmentPlans()->archiveInstallmentPlan('UUID');
 
 // Send reminder
-$ascend->installmentPlans()->sendInstallmentPlanReminder('plan_123');
+$ascend->installmentPlans()->sendInstallmentPlanReminder('UUID');
 ```
 
 ## Error Handling
