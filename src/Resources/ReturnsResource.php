@@ -17,7 +17,7 @@ class ReturnsResource extends Resource
      * @return array
      * @throws \AscendSDK\Exceptions\AscendException
      */
-    public function get(string $installment_plan_id): array
+    public function installmentPlansIndex(string $installment_plan_id): array
     {
         return $this->httpGet("/v1/installment_plans/{$installment_plan_id}/returns");
     }
@@ -30,7 +30,7 @@ class ReturnsResource extends Resource
      * @return array
      * @throws \AscendSDK\Exceptions\AscendException
      */
-    public function create(string $installment_plan_id, array $data): array
+    public function installmentPlansCreate(string $installment_plan_id, array $data): array
     {
         return $this->httpPost("/v1/installment_plans/{$installment_plan_id}/returns", $data);
     }
@@ -43,7 +43,7 @@ class ReturnsResource extends Resource
      * @return array
      * @throws \AscendSDK\Exceptions\AscendException
      */
-    public function get(string $installment_plan_id, string $return_id): array
+    public function installmentPlansGet(string $installment_plan_id, string $return_id): array
     {
         return $this->httpGet("/v1/installment_plans/{$installment_plan_id}/returns/{$return_id}");
     }
@@ -57,7 +57,7 @@ class ReturnsResource extends Resource
      * @return array
      * @throws \AscendSDK\Exceptions\AscendException
      */
-    public function update(string $installment_plan_id, string $return_id, array $data): array
+    public function installmentPlansUpdate(string $installment_plan_id, string $return_id, array $data): array
     {
         return $this->httpPatch("/v1/installment_plans/{$installment_plan_id}/returns/{$return_id}", $data);
     }
@@ -70,7 +70,7 @@ class ReturnsResource extends Resource
      * @return array
      * @throws \AscendSDK\Exceptions\AscendException
      */
-    public function delete(string $installment_plan_id, string $return_id): array
+    public function installmentPlansUelete(string $installment_plan_id, string $return_id): array
     {
         return $this->httpDelete("/v1/installment_plans/{$installment_plan_id}/returns/{$return_id}");
     }
@@ -82,7 +82,7 @@ class ReturnsResource extends Resource
      * @return array
      * @throws \AscendSDK\Exceptions\AscendException
      */
-    public function get(string $one_time_payment_id): array
+    public function oneTimePaymentIndex(string $one_time_payment_id): array
     {
         return $this->httpGet("/v1/one_time_payments/{$one_time_payment_id}/returns");
     }
@@ -95,7 +95,7 @@ class ReturnsResource extends Resource
      * @return array
      * @throws \AscendSDK\Exceptions\AscendException
      */
-    public function create(string $one_time_payment_id, array $data): array
+    public function oneTimePaymentCreate(string $one_time_payment_id, array $data): array
     {
         return $this->httpPost("/v1/one_time_payments/{$one_time_payment_id}/returns", $data);
     }
@@ -108,7 +108,7 @@ class ReturnsResource extends Resource
      * @return array
      * @throws \AscendSDK\Exceptions\AscendException
      */
-    public function get(string $one_time_payment_id, string $return_id): array
+    public function oneTimePaymentGet(string $one_time_payment_id, string $return_id): array
     {
         return $this->httpGet("/v1/one_time_payments/{$one_time_payment_id}/returns/{$return_id}");
     }
@@ -122,7 +122,7 @@ class ReturnsResource extends Resource
      * @return array
      * @throws \AscendSDK\Exceptions\AscendException
      */
-    public function update(string $one_time_payment_id, string $return_id, array $data): array
+    public function oneTimePaymentUpdate(string $one_time_payment_id, string $return_id, array $data): array
     {
         return $this->httpPatch("/v1/one_time_payments/{$one_time_payment_id}/returns/{$return_id}", $data);
     }
@@ -135,7 +135,7 @@ class ReturnsResource extends Resource
      * @return array
      * @throws \AscendSDK\Exceptions\AscendException
      */
-    public function delete(string $one_time_payment_id, string $return_id): array
+    public function oneTimePaymentDelete(string $one_time_payment_id, string $return_id): array
     {
         return $this->httpDelete("/v1/one_time_payments/{$one_time_payment_id}/returns/{$return_id}");
     }

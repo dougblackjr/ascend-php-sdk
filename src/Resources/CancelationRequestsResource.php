@@ -17,7 +17,7 @@ class CancelationRequestsResource extends Resource
      * @return array
      * @throws \AscendSDK\Exceptions\AscendException
      */
-    public function get(string $billable_id): array
+    public function index(string $billable_id): array
     {
         return $this->httpGet("/v1/billables/{$billable_id}/cancelations");
     }
