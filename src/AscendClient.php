@@ -80,8 +80,8 @@ class AscendClient
     ) {
         // Set base URL based on environment
         $this->baseUrl = $environment === 'production'
-            ? 'https://api.useascend.com/v1'
-            : 'https://sandbox.api.useascend.com/v1';
+            ? 'https://api.useascend.com'
+            : 'https://sandbox.api.useascend.com';
 
         // Configure Guzzle HTTP client
         $this->httpClient = new Client([
